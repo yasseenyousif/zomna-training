@@ -1,0 +1,43 @@
+@use "./base.scss";
+
+// RTL Support for Arabic
+html {
+    direction: rtl;
+    text-align: right;
+}
+
+body {
+    direction: rtl;
+    text-align: right;
+}
+
+// Fix sidebar positioning for RTL
+.sidebar.left {
+    left: auto !important;
+    right: 0 !important;
+}
+
+.sidebar.right {
+    right: auto !important;
+    left: 0 !important;
+}
+
+// Fix blockquote border for RTL
+blockquote {
+    border-left: none !important;
+    border-right: 3px solid var(--secondary) !important;
+    padding-left: 0 !important;
+    padding-right: 1rem !important;
+}
+
+// Fix list alignment
+ul,
+ol {
+    padding-right: 1.5rem;
+    padding-left: 0;
+}
+
+// Fix text alignment in tables
+th {
+    text-align: right;
+}

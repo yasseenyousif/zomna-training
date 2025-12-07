@@ -11,15 +11,17 @@ body {
     text-align: right;
 }
 
-// Fix sidebar positioning for RTL
-.sidebar.left {
-    left: auto !important;
-    right: 0 !important;
-}
+// Fix sidebar positioning for RTL (only on desktop)
+@media (min-width: 1024px) {
+    .sidebar.left {
+        left: auto;
+        right: 0;
+    }
 
-.sidebar.right {
-    right: auto !important;
-    left: 0 !important;
+    .sidebar.right {
+        right: auto;
+        left: 0;
+    }
 }
 
 // Fix blockquote border for RTL
@@ -40,4 +42,21 @@ ol {
 // Fix text alignment in tables
 th {
     text-align: right;
+}
+
+// Ensure mobile menu works properly
+@media (max-width: 1023px) {
+    .sidebar {
+        direction: rtl;
+    }
+
+    .page {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .center,
+    article {
+        padding: 0 1rem;
+    }
 }
